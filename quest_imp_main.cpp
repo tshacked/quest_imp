@@ -2,8 +2,29 @@
 #include <iostream>
 using namespace std;
 
+//#define _CRT_SECURE_NO_WARNINGS 1
+#pragma warning(disable:4996)
 #define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))
 
+
+// Write a C function that compresses a C string from a sequence of characters
+// to a sequence of characters & the # of consecutive times they appear.
+// For instance: compress("aabcccdd") = "a2b1c3d2".
+//-------------------------------------------------------------------------
+void compress(char* dst, const char* src)
+{
+	while (*src) {
+		*dst = *src++;
+		int count = 1;
+		for (; *src == *dst; ++src) {
+			++count;
+		}
+		++dst; // now src points to a different character than we started with which could be the end of the string too
+		dst += sprintf(dst, "%d", count);
+	}
+	*dst = 0; // remember to null terminate
+}
+//-------------------------------------------------------------------------
 int main() {
 	cout << "Hi Im Tamar" << endl;
 
@@ -22,32 +43,10 @@ int main() {
 	cout << "number of elements: " << num_of_elements << endl;
 	//char dst[num_of_elements];  -- cannot init - "expression did not evaluate to a constant"
 	char dst[ sizeof(src) / sizeof(src[0]) ];
-	//compress();
+	compress(dst, src);
+	cout << "src = " << src << endl;
+	cout << "dst = " << dst << endl;
 	system("pause");
 	return 0;
 }
-
-
-/*
-Write a C function that compresses a C string from a sequence of characters 
-to a sequence of characters & the # of consecutive times they appear. 
-For instance: compress("aabcccdd") = "a2b1c3d2".
-*/
-
-void compress(char* dst, const char* src)
-{
-	while (*src) {
-		// in this loop, we'll do one char/num pair at a time
-		*dst = *src++;
-
-		int count = 1;
-		for (; *src == *dst; ++src) {
-			++count;
-		}
-
-		// now src points to a different character than we started with which could be the end of the string too
-		++dst;
-		dst += sprintf(dst, "%d", count);
-	}
-	*dst = 0; // remember to null terminate
-}
+//-------------------------------------------------------------------------
