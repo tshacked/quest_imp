@@ -1,4 +1,3 @@
-
 #ifndef ___Singleton_H__
 #define ___Singleton_H__
 

@@ -1,0 +1,43 @@
+#VS files
+*.vcxproj.user
+*.exp
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+*.pdb
+*.idb
+*.ib_pdb_index
+*.ilk
+*.cache
+*.sbr
+*.suo
+*.bsc
+*.exp
+*.resources
+
+# Libraries
+*.lib
+#*.contrib
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+#*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+bin/
+*.log
+*.tlog
+*.pyc
+
+#dsp
+dspApps/Apps/TSL/Infra/
