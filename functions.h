@@ -5,6 +5,7 @@
 using namespace std;
 
 vector<int> CyclicRotation_solution(vector<int> &A, int K);
+int OddOccurrencesInArray_solution(vector<int> &A);
 
 #endif
 

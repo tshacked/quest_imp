@@ -73,19 +73,23 @@ void printVector(vector<int>& A) {
 //-------------------------------------------------------------------------
 int main() {
 	cout << "Starting Test" << endl;
+
+	vector<int> v{100};
+	int res = OddOccurrencesInArray_solution(v);
+	cout << "Input OddOccurrencesInArray == "<<res;
+	system("pause");
+	return 0;
 //-------------------------------------------------------------------------
 	cout << "CyclicRotation --------------> " << endl;
 	vector<int> in{ 3, 8, 9, 7, 6 };
 	cout << "Input vector: ";
 	printVector(in);
 
-	int k = 2;
+	int k = 3;
 	vector<int> out = CyclicRotation_solution(in, k);
 	cout << "Output vector: ";
 	printVector(out);
 
-	system("pause");
-	return 0;
 //-------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------

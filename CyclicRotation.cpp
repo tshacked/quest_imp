@@ -45,33 +45,27 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [−1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 */
-
-void swap(int *xp, int *yp)
-{
-	int temp = *xp;
-	*xp = *yp;
-	*yp = temp;
-}
 //A = [3, 8, 9, 7, 6]
 //A = [6, 3, 8, 9, 7]
 
 
 vector<int> CyclicRotation_solution(vector<int> &A, int k)
 {
-	vector<int> out;
+	vector<int> out(A.size());
 	if (A.empty()) return out;
-	int s = A.size();
-	for (int i = 0; i < A.size(); i++) {
-		out.push_back(A[(i + k) % s]);
+
+	if (k < 1) {
+		out = A;
+		return out;
 	}
-	
-	/*int s = out.size();
-	int tmp;
-	for (int i = 0; i < k; i++) { //K times
-		for (int j = 1; j < s; j++) {
-			tmp = out[j];
-			out[j] = out[j - 1];
-		}
-	}*/
+
+	unsigned int s = A.size();
+	for (unsigned int i = 0; i < s; i++) {
+		unsigned int pos = (i + k) % s;
+		cout << "pos: " << pos << endl;
+		//out.push_back(A[(i + k) % s]);
+		out[pos] = A[i];
+	}
 	return out;
+
 }
