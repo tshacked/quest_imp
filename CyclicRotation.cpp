@@ -63,7 +63,6 @@ vector<int> CyclicRotation_solution(vector<int> &A, int k)
 	for (unsigned int i = 0; i < s; i++) {
 		unsigned int pos = (i + k) % s;
 		cout << "pos: " << pos << endl;
-		//out.push_back(A[(i + k) % s]);
 		out[pos] = A[i];
 	}
 	return out;
